@@ -1,0 +1,38 @@
+Icons:
+  SubElements:
+    Lightning: NETHERRACK
+    Combustion: NETHERRACK
+    Plant: LEAVES
+    Blood: STAINED_CLAY:14
+    Lava: STAINED_CLAY:1
+    Spiritual: QUARTZ_BLOCK
+    Flight: QUARTZ_BLOCK
+    Ice: ICE
+    Healing: STAINED_CLAY:11
+    Sand: SAND
+    Metal: IRON_BLOCK
+  Elements:
+    Earth: GRASS
+    Chi: STAINED_CLAY:4
+    Water: STAINED_CLAY:11
+    Air: QUARTZ_BLOCK
+    Fire: NETHERRACK
+    Avatar: BEACON
+General:
+  Description:
+    Fire: Firebenders can create fire with their bare fists. They are more prone to fire based damage and in some cases are completely fire resistant. Some skilled firebenders can even create lightning, making them very dangerous.
+    Water: Waterbenders can manipulate anything with water in them, including ice, plants and of course, water. They can freeze and thaw ice at will, and can also swim extremely fast in water.
+    Earth: Earthbenders can manipulate almost anything natrual from the earth. Earthebenders take no fall damage while landing on blocks they can bend and some skilled benders can even bend metal.
+    Air: Airbenders can manipulate air at will, making them extremely fast and agile and have a powerful connection with spirits. They can also jump higher, run faster and they take no fall damage when they hit the ground.
+    Chi: Chiblocking isn't stricly an element but it is a form of art that makes the user faster and more agile than other benders. Chiblockers can paralyze other benders, take their bending away and can fight extremely well.
+Gui:
+  Item:
+    Material: COMPASS
+    Damage: 0
+  RequireItem: true
+  GiveMessage: Right click the compass to configure your bending!
+  UserIcon:
+    ShowSubelements: false
+Admin:
+  Alerts: true
+  QuickSnoop: true

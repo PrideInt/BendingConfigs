@@ -17,21 +17,22 @@ Properties:
   RegionProtection:
     AllowHarmlessAbilities: true
     RespectWorldGuard: true
-    RespectGriefPrevention: false
-    RespectFactions: false
-    RespectTowny: false
-    RespectPreciousStones: false
-    RespectLWC: false
+    RespectGriefPrevention: true
+    RespectFactions: true
+    RespectTowny: true
+    RespectPreciousStones: true
+    RespectLWC: true
     Residence:
       Flag: bending
-      Respect: false
+      Respect: true
+    Kingdoms: true
     CacheBlockTime: 5000
   Air:
     CanBendWithWeapons: false
-    Particles: smoke
+    Particles: spell
     PlaySound: true
   Water:
-    CanBendWithWeapons: false
+    CanBendWithWeapons: true
     IceBlocks:
     - ICE
     - PACKED_ICE
@@ -66,7 +67,7 @@ Properties:
     RevertEarthbending: true
     SafeRevert: true
     RevertCheckTime: 300000
-    CanBendWithWeapons: false
+    CanBendWithWeapons: true
     EarthBlocks:
     - DIRT
     - MYCEL
@@ -84,8 +85,7 @@ Properties:
     - QUARTZ_ORE
     - COBBLESTONE
     - STEP
-    - HARD_CLAY
-    - STAINED_CLAY
+    - GRASS_PATH
     MetalBlocks:
     - IRON_BLOCK
     - GOLD_BLOCK
@@ -98,40 +98,148 @@ Properties:
     MetalPowerFactor: 1.5
     PlaySound: true
   Fire:
-    CanBendWithWeapons: false
+    CanBendWithWeapons: true
     DayFactor: 1.25
     PlaySound: true
     FireGriefing: false
     RevertTicks: 12000
   Chi:
-    CanBendWithWeapons: false
+    CanBendWithWeapons: true
   DisabledWorlds:
-  - bendingshop
+  - TestWorld
+  - TestWorld2
 Abilities:
   Avatar:
     AvatarState:
       Enabled: true
-      Cooldown: 600000
-      Duration: 180000
-      PowerMultiplier: 1
+      Cooldown: 7200000
+      Duration: 480000
       PotionEffects:
         Regeneration:
           Enabled: true
-          Power: 1
+          Power: 3
         Speed:
           Enabled: true
-          Power: 1
+          Power: 3
         DamageResistance:
           Enabled: true
-          Power: 1
+          Power: 3
         FireResistance:
           Enabled: true
-          Power: 1
+          Power: 3
+      Air:
+        AirBlast:
+          Push:
+            Entities: 4.5
+            Self: 4.0
+        AirSwipe:
+          Cooldown: 1000
+          Damage: 4.5
+          Push: 1.0
+        AirBurst:
+          ChargeTime: 1000
+          Damage: 3
+        AirShield:
+          IsAvatarStateToggle: true
+        Suffocate:
+          Cooldown: 0
+          ChargeTime: 1000
+          Damage: 3
+          Range: 16
+      AirSpout:
+        Height: 26
+      AirSuction:
+        Push: 3.5
+      Earth:
+        Catapult:
+          Length: 10
+          Push: 8
+          Cooldown: 0
+        LavaFlow:
+          ShiftCooldown: 1500
+          ClickLavaCooldown: 1500
+          ClickLandCooldown: 1500
+          ShiftPlatformRadius: 18
+          ClickRadius: 18
+          ShiftRadius: 18
+        MetalClips:
+          Cooldown: 2000
+          Range: 20
+          CrushDamage: 3
+        RaiseEarth:
+          Wall:
+            Height: 20
+          Column:
+            Width: 16
+        Collapse:
+          Column:
+            Height: 20
+          Wall:
+            Height: 20
+        EarthArmor:
+          Cooldown: 2000
+          GoldHearts: 6
+        EarthBlast:
+          Cooldown: 500
+          Damage: 5
+        EarthGrab:
+          Cooldown: 0
+          Height: 10
+        Shockwave:
+          Range: 20
+          Cooldown: 0
+          ChargeTime: 1500
+          Damage: 5
+          Knockback: 2
+        EarthSmash:
+          SelectRange: 16
+          GrabRange: 16
+          ChargeTime: 1500
+          Cooldown: 0
+          Damage: 7
+          Knockback: 4.5
+          FlightSpeed: 1.0
+          FlightTimer: 10000
+          ShootRange: 30
+        EarthTunnel:
+          Radius: 0.05
+      Fire:
+        Blaze:
+          Ring:
+            Range: 14
+        FireJet:
+          IsAvatarStateToggle: true
+        Lightning:
+          ChargeTime: 1500
+          Damage: 6
+          Cooldown: 1000
+        FireBurst:
+          ChargeTime: 1
+          Damage: 3
+          Cooldown: 0
+        FireBlast:
+          Charged:
+            ChargeTime: 1500
+            Damage: 5
+      Water:
+        Surge:
+          Wall:
+            Radius: 4
+          Wave:
+            Radius: 20
+        WaterManipulation:
+          Damage: 5
   Air:
     Passive:
       Factor: 0.3
-      Speed: 2
-      Jump: 3
+      AirAgility:
+        Enabled: true
+        JumpPower: 3
+        SpeedPower: 2
+      AirSaturation:
+        Enabled: true
+      GracefulDescent:
+        Enabled: true
     AirBlast:
       Enabled: true
       Speed: 25
@@ -174,7 +282,6 @@ Abilities:
       Streams: 5
       Speed: 10
       Particles: 5
-      IsAvatarStateToggle: true
     AirSpout:
       Enabled: true
       Height: 16
@@ -205,8 +312,10 @@ Abilities:
     Flight:
       Enabled: true
       HoverEnabled: true
+      Cooldown: 5000
       Speed: 1
       MaxHits: 4
+      MaxDuration: 0
     Suffocate:
       Enabled: true
       ChargeTime: 500
@@ -262,7 +371,11 @@ Abilities:
         Cooldown: 6000
   Water:
     Passive:
-      SwimSpeedFactor: 0.7
+      FastSwim:
+        Enabled: true
+        SpeedFactor: 0.7
+      Hydrosink:
+        Enabled: true
     Bloodbending:
       Enabled: true
       CanOnlyBeUsedAtNight: true
@@ -272,7 +385,7 @@ Abilities:
       HoldTime: 0
       Cooldown: 3000
       CanOnlyBeUsedDuringFullMoon: true
-      CanBloodbendOtherBloodbenders: true
+      CanBloodbendOtherBloodbenders: false
     HealingWaters:
       Enabled: true
       Cooldown: 0
@@ -282,14 +395,12 @@ Abilities:
       Power: 1
       Duration: 70
       EnableParticles: true
-      ShiftRequired: true
-      Radius: 5
     IceBlast:
       Enabled: true
       Damage: 3
       Range: 20
       DeflectRange: 3
-      CollisionRadius: 2
+      CollisionRadius: 1.5
       Interval: 20
       Cooldown: 1500
     IceSpike:
@@ -311,7 +422,7 @@ Abilities:
       Blast:
         Range: 20
         Damage: 1
-        CollisionRadius: 2
+        CollisionRadius: 1.5
         DeflectRange: 3
         Cooldown: 500
         SlowCooldown: 5000
@@ -329,19 +440,18 @@ Abilities:
       Cooldown: 0
       AngleIncrement: 45
     PhaseChange:
-      Enabled: false
-      Range: 10
-      Radius: 3
-      Freeze:
-        Cooldown: 1000
-      Melt:
-        Cooldown: 1000
-    PlantArmor:
       Enabled: true
-      Duration: 7500
-      Resistance: 1
-      Cooldown: 15000
-      Range: 10
+      SourceRange: 7
+      Freeze:
+        Cooldown: 500
+        Radius: 3
+        Depth: 1
+        ControlRadius: 25
+      Melt:
+        Cooldown: 2000
+        Delay: 50
+        Radius: 7
+        AllowFlow: true
     Surge:
       Enabled: true
       Wave:
@@ -353,6 +463,7 @@ Abilities:
         MaxFreezeRadius: 7
         Cooldown: 500
         Interval: 30
+        IceRevertTime: 60000
       Wall:
         Range: 5
         Radius: 2
@@ -373,9 +484,11 @@ Abilities:
       MaxUpwardForce: 0.2
       Interval: 30
       Cooldown: 0
+      Revert: true
+      RevertTime: 60000
       Wave:
         Radius: 12
-        Knockback: 1.3
+        Knockback: 1.5
         Height: 1
         GrowSpeed: 0.5
         Interval: 30
@@ -447,11 +560,11 @@ Abilities:
       Damage: 3.0
       Range: 25
       SelectRange: 16
-      CollisionRadius: 2
+      CollisionRadius: 1.5
       DeflectRange: 3
       Speed: 35
       Push: 0.3
-      Cooldown: 3000
+      Cooldown: 1000
     WaterSpout:
       Enabled: true
       Height: 16
@@ -476,6 +589,8 @@ Abilities:
         Damage: 3
         Cooldown: 6000
         ThawRadius: 10
+        RevertSphere: true
+        RevertSphereTime: 30000
       IceBullet:
         Enabled: true
         Damage: 2
@@ -488,7 +603,10 @@ Abilities:
   Earth:
     Passive:
       Duration: 2500
-      SandRunSpeed: 2
+      DensityShift:
+        Enabled: true
+      FerroControl:
+        Enabled: true
     Catapult:
       Enabled: true
       Length: 6
@@ -511,20 +629,19 @@ Abilities:
       SelectRange: 10
       GoldHearts: 4
       Cooldown: 17500
-      Duration: 10000
-      Strength: 2
+      MaxDuration: 20000
     EarthBlast:
       Enabled: true
       CanHitSelf: false
       SelectRange: 10
       Range: 30
-      Speed: 45
+      Speed: 35
       Revert: true
-      Damage: 4
+      Damage: 3
       Push: 0.3
       Cooldown: 500
       DeflectRange: 3
-      CollisionRadius: 2
+      CollisionRadius: 1.5
     EarthGrab:
       Enabled: true
       SelectRange: 20
@@ -646,7 +763,7 @@ Abilities:
         Angle: 10
         Cooldown: 1000
     Combustion:
-      Enabled: false
+      Enabled: true
       Cooldown: 10000
       BreakBlocks: false
       Power: 1.0
@@ -658,7 +775,7 @@ Abilities:
       Enabled: true
       Speed: 20
       Range: 20
-      CollisionRadius: 2
+      CollisionRadius: 1.5
       Push: 0.3
       Damage: 3
       Cooldown: 1500
@@ -690,7 +807,6 @@ Abilities:
       Speed: 0.8
       Duration: 2000
       Cooldown: 7000
-      IsAvatarStateToggle: true
     FireShield:
       Enabled: true
       Radius: 3
@@ -701,19 +817,19 @@ Abilities:
       FireTicks: 2
     HeatControl:
       Enabled: true
+      Cook:
+        Interval: 1000
       Extinguish:
-        Range: 20
-        Radius: 7
-        Cooldown: 500
-      Solidify:
-        Range: 10
-        Radius: 7
-        RevertTime: 20000
+        Cooldown: 5000
+        Radius: 6
       Melt:
         Range: 15
         Radius: 5
-      Cook:
-        CookTime: 2000
+      Solidify:
+        MaxRadius: 10
+        Range: 7
+        Revert: true
+        RevertTime: 120000
     Illumination:
       Enabled: true
       Passive: true
@@ -781,10 +897,17 @@ Abilities:
         FireTicks: 2.5
   Chi:
     Passive:
-      ExhaustionFactor: 0.3
+      Acrobatics:
+        Enabled: true
+        FallReductionFactor: 0.5
       FallReductionFactor: 0.5
-      Speed: 1
-      Jump: 1
+      ChiAgility:
+        Enabled: true
+        JumpPower: 1
+        SpeedPower: 1
+      ChiSaturation:
+        Enabled: true
+        ExhaustionFactor: 0.3
       BlockChi:
         Chance: 25
         Duration: 1000
@@ -823,7 +946,8 @@ Abilities:
       Resistance: -1
     QuickStrike:
       Enabled: true
-      Damage: 1
+      Damage: 2
+      Cooldown: 3000
       ChiBlockChance: 10
     SwiftKick:
       Enabled: true
@@ -831,15 +955,19 @@ Abilities:
       ChiBlockChance: 15
       Cooldown: 4000
 Storage:
-  engine: MySQL
+  engine: sqlite
   MySQL:
-    host: removed
-    port: removed
-    pass: removed
-    db: removed
-    user: removed
+    host: localhost
+    port: 3306
+    pass: ''
+    db: minecraft
+    user: root
 debug: false
 ExtraAbilities:
+  Loony:
+    AirJump:
+      Range: 3
+      Cooldown: 6000
   Sobki:
     Link:
       Range: 12
@@ -847,7 +975,3 @@ ExtraAbilities:
       Duration: 5000
       Cooldown: 6000
       SoundVolume: 0.5
-  Loony:
-    AirJump:
-      Range: 3
-      Cooldown: 6000

@@ -17,22 +17,22 @@ Properties:
   RegionProtection:
     AllowHarmlessAbilities: true
     RespectWorldGuard: true
-    RespectGriefPrevention: true
-    RespectFactions: true
-    RespectTowny: true
-    RespectPreciousStones: true
-    RespectLWC: true
+    RespectGriefPrevention: false
+    RespectFactions: false
+    RespectTowny: false
+    RespectPreciousStones: false
+    RespectLWC: false
     Residence:
       Flag: bending
-      Respect: true
-    Kingdoms: true
+      Respect: false
+    Kingdoms: false
     CacheBlockTime: 5000
   Air:
     CanBendWithWeapons: false
     Particles: spell
     PlaySound: true
   Water:
-    CanBendWithWeapons: true
+    CanBendWithWeapons: false
     IceBlocks:
     - ICE
     - PACKED_ICE
@@ -67,7 +67,7 @@ Properties:
     RevertEarthbending: true
     SafeRevert: true
     RevertCheckTime: 300000
-    CanBendWithWeapons: true
+    CanBendWithWeapons: false
     EarthBlocks:
     - DIRT
     - MYCEL
@@ -98,35 +98,34 @@ Properties:
     MetalPowerFactor: 1.5
     PlaySound: true
   Fire:
-    CanBendWithWeapons: true
+    CanBendWithWeapons: false
     DayFactor: 1.25
     PlaySound: true
     FireGriefing: false
     RevertTicks: 12000
   Chi:
-    CanBendWithWeapons: true
+    CanBendWithWeapons: false
   DisabledWorlds:
-  - TestWorld
-  - TestWorld2
+  - bendingshop
 Abilities:
   Avatar:
     AvatarState:
       Enabled: true
-      Cooldown: 7200000
-      Duration: 480000
+      Cooldown: 600000
+      Duration: 180000
       PotionEffects:
         Regeneration:
           Enabled: true
-          Power: 3
+          Power: 1
         Speed:
           Enabled: true
-          Power: 3
+          Power: 1
         DamageResistance:
           Enabled: true
-          Power: 3
+          Power: 1
         FireResistance:
           Enabled: true
-          Power: 3
+          Power: 1
       Air:
         AirBlast:
           Push:
@@ -154,7 +153,7 @@ Abilities:
         Catapult:
           Length: 10
           Push: 8
-          Cooldown: 0
+          Cooldown: 500
         LavaFlow:
           ShiftCooldown: 1500
           ClickLavaCooldown: 1500
@@ -183,11 +182,11 @@ Abilities:
           Cooldown: 500
           Damage: 5
         EarthGrab:
-          Cooldown: 0
+          Cooldown: 500
           Height: 10
         Shockwave:
           Range: 20
-          Cooldown: 0
+          Cooldown: 500
           ChargeTime: 1500
           Damage: 5
           Knockback: 2
@@ -195,7 +194,7 @@ Abilities:
           SelectRange: 16
           GrabRange: 16
           ChargeTime: 1500
-          Cooldown: 0
+          Cooldown: 500
           Damage: 7
           Knockback: 4.5
           FlightSpeed: 1.0
@@ -216,7 +215,7 @@ Abilities:
         FireBurst:
           ChargeTime: 1
           Damage: 3
-          Cooldown: 0
+          Cooldown: 500
         FireBlast:
           Charged:
             ChargeTime: 1500
@@ -319,7 +318,7 @@ Abilities:
     Suffocate:
       Enabled: true
       ChargeTime: 500
-      Cooldown: 0
+      Cooldown: 500
       Range: 20
       Damage: 2
       DamageInitialDelay: 2
@@ -385,7 +384,7 @@ Abilities:
       HoldTime: 0
       Cooldown: 3000
       CanOnlyBeUsedDuringFullMoon: true
-      CanBloodbendOtherBloodbenders: false
+      CanBloodbendOtherBloodbenders: true
     HealingWaters:
       Enabled: true
       Cooldown: 0
@@ -763,7 +762,7 @@ Abilities:
         Angle: 10
         Cooldown: 1000
     Combustion:
-      Enabled: true
+      Enabled: false
       Cooldown: 10000
       BreakBlocks: false
       Power: 1.0

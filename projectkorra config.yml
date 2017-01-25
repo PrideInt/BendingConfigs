@@ -29,7 +29,7 @@ Properties:
     CacheBlockTime: 5000
   Air:
     CanBendWithWeapons: false
-    Particles: spell
+    Particles: smoke
     PlaySound: true
   Water:
     CanBendWithWeapons: false

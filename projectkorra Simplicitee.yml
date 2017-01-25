@@ -1,4 +1,8 @@
 Abilities:
+  MetalRepair:
+    Cooldown: 1000
+    RepairAmount: 25
+    RepairInterval: 1250
   FireDisc:
     Damage: 2
     Range: 25
@@ -13,7 +17,3 @@ Abilities:
     Cooldown: 1000
     PullSpeed: 0.675
     Radius: 18
-  MetalRepair:
-    Cooldown: 1000
-    RepairAmount: 25
-    RepairInterval: 1250

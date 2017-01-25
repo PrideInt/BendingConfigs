@@ -1,0 +1,19 @@
+Abilities:
+  FireDisc:
+    Damage: 2
+    Range: 25
+    Cooldown: 1500
+    Controllable: true
+    RevertCutBlocks: true
+    DropCutBlocks: false
+    Cuttable_Blocks:
+    - LOG
+    - LOG_2
+  EarthDrag:
+    Cooldown: 1000
+    PullSpeed: 0.675
+    Radius: 18
+  MetalRepair:
+    Cooldown: 1000
+    RepairAmount: 25
+    RepairInterval: 1250

@@ -1,5 +1,5 @@
 Chat:
-  Enable: true
+  Enable: false
   Format: '<name>: <message>'
   Colors:
     Avatar: DARK_PURPLE

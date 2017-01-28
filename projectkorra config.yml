@@ -86,6 +86,11 @@ Properties:
     - COBBLESTONE
     - STEP
     - GRASS_PATH
+    - STAINED_CLAY
+    - MOSSY_COBBLESTONE
+    - STONE_BRICK
+    - MOSSY_STONE_BRICK
+    - SOUL_SAND
     MetalBlocks:
     - IRON_BLOCK
     - GOLD_BLOCK
@@ -158,9 +163,9 @@ Abilities:
           ShiftCooldown: 1500
           ClickLavaCooldown: 1500
           ClickLandCooldown: 1500
-          ShiftPlatformRadius: 18
-          ClickRadius: 18
-          ShiftRadius: 18
+          ShiftPlatformRadius: 7
+          ClickRadius: 5
+          ShiftRadius: 7
         MetalClips:
           Cooldown: 2000
           Range: 20

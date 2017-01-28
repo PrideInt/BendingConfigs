@@ -172,14 +172,14 @@ Abilities:
           CrushDamage: 3
         RaiseEarth:
           Wall:
-            Height: 20
+            Height: 12
           Column:
-            Width: 16
+            Width: 8
         Collapse:
           Column:
-            Height: 20
+            Height: 15
           Wall:
-            Height: 20
+            Height: 15
         EarthArmor:
           Cooldown: 2000
           GoldHearts: 6
@@ -210,7 +210,7 @@ Abilities:
       Fire:
         Blaze:
           Ring:
-            Range: 14
+            Range: 10
         FireJet:
           IsAvatarStateToggle: true
         Lightning:
@@ -218,7 +218,7 @@ Abilities:
           Damage: 6
           Cooldown: 1000
         FireBurst:
-          ChargeTime: 1
+          ChargeTime: 2000
           Damage: 3
           Cooldown: 500
         FireBlast:
@@ -230,7 +230,7 @@ Abilities:
           Wall:
             Radius: 4
           Wave:
-            Radius: 20
+            Radius: 15
         WaterManipulation:
           Damage: 5
   Air:

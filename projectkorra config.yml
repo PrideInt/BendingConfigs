@@ -160,7 +160,7 @@ Abilities:
         AirShield:
           IsAvatarStateToggle: true
         Suffocate:
-          Cooldown: 0
+          Cooldown: 500
           ChargeTime: 1000
           Damage: 3
           Range: 16
@@ -406,7 +406,7 @@ Abilities:
       CanBloodbendOtherBloodbenders: true
     HealingWaters:
       Enabled: true
-      Cooldown: 0
+      Cooldown: 500
       Range: 5
       Interval: 750
       ChargeTime: 1000
@@ -455,7 +455,7 @@ Abilities:
       Damage: 4
       Knockback: 1.75
       FormDelay: 40
-      Cooldown: 0
+      Cooldown: 500
       AngleIncrement: 45
     PhaseChange:
       Enabled: true
@@ -485,7 +485,7 @@ Abilities:
       Wall:
         Range: 5
         Radius: 2
-        Cooldown: 0
+        Cooldown: 500
         Interval: 30
     Torrent:
       Enabled: true
@@ -501,7 +501,7 @@ Abilities:
       Radius: 3
       MaxUpwardForce: 0.2
       Interval: 30
-      Cooldown: 0
+      Cooldown: 500
       Revert: true
       RevertTime: 60000
       Wave:
@@ -510,7 +510,7 @@ Abilities:
         Height: 1
         GrowSpeed: 0.5
         Interval: 30
-        Cooldown: 0
+        Cooldown: 500
     Plantbending:
       RegrowTime: 180000
     WaterArms:
@@ -732,7 +732,7 @@ Abilities:
       MagnetPower: 0.6
       Cooldown: 6000
       CrushCooldown: 2000
-      ShootCooldown: 0
+      ShootCooldown: 100
       Duration: 10000
       ThrowEnabled: true
     RaiseEarth:
@@ -815,7 +815,7 @@ Abilities:
       Damage: 2
       Ignite: true
       ChargeTime: 3500
-      Cooldown: 0
+      Cooldown: 500
       Range: 14
       AnglePhi: 10
       AngleTheta: 10

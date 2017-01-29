@@ -36,6 +36,7 @@ Properties:
     IceBlocks:
     - ICE
     - PACKED_ICE
+    - FROSTED_ICE
     PlantBlocks:
     - SAPLING
     - LEAVES
@@ -58,6 +59,8 @@ Properties:
     - SUGAR_CANE_BLOCK
     - PUMPKIN_STEM
     - MELON_STEM
+    - HAY_BLOCK
+    - WHEAT
     SnowBlocks:
     - SNOW
     NightFactor: 1.5
@@ -86,15 +89,26 @@ Properties:
     - COBBLESTONE
     - STEP
     - GRASS_PATH
-    - STAINED_CLAY
+    - STAINED_HARDENED_CLAY
+    - HARDENED_CLAY
     - MOSSY_COBBLESTONE
-    - STONE_BRICK
-    - MOSSY_STONE_BRICK
+    - STONEBRICK
+    - MOSSY_STONEBRICK
+    - CHISELED_STONEBRICK
+    - CRACKED_STONEBRICK
+    - COAL_BLOCK
+    - LAPIS_BLOCK
+    - REDSTONE_BLOCK
     - SOUL_SAND
+    - OBSIDIAN
+    - NETHER_BRICK
+    - NETHER_BRICK_FENCE
+    - COBBLESTONE_WALL
     MetalBlocks:
     - IRON_BLOCK
     - GOLD_BLOCK
     - QUARTZ_BLOCK
+    - IRON_BARS
     SandBlocks:
     - SAND
     - SANDSTONE

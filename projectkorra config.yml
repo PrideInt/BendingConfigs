@@ -276,7 +276,7 @@ Abilities:
       CanCoolLava: true
     AirBubble:
       Enabled: true
-      Radius: 7
+      Radius: 5
     AirBurst:
       Enabled: true
       FallThreshold: 10
@@ -572,7 +572,7 @@ Abilities:
             FullMoon: 12000
     WaterBubble:
       Enabled: true
-      Radius: 6
+      Radius: 5
     WaterManipulation:
       Enabled: true
       Damage: 3.0

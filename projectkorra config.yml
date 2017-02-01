@@ -946,7 +946,7 @@ Abilities:
     Paralyze:
       Enabled: true
       Cooldown: 10000
-      Duration: 1500
+      Duration: 500
     RapidPunch:
       Enabled: true
       Damage: 1

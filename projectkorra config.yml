@@ -458,7 +458,7 @@ Abilities:
       Cooldown: 500
       AngleIncrement: 45
     PhaseChange:
-      Enabled: true
+      Enabled: false
       SourceRange: 7
       Freeze:
         Cooldown: 500

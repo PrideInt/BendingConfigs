@@ -69,7 +69,7 @@ Properties:
   Earth:
     RevertEarthbending: true
     SafeRevert: true
-    RevertCheckTime: 300000
+    RevertCheckTime: 60000
     CanBendWithWeapons: false
     EarthBlocks:
     - DIRT
@@ -164,15 +164,18 @@ Abilities:
           ChargeTime: 1000
           Damage: 3
           Range: 16
+        AirSpout:
+          Height: 26
+        AirSuction:
+          Push: 3.5
       AirSpout:
         Height: 26
       AirSuction:
         Push: 3.5
       Earth:
         Catapult:
-          Length: 10
-          Push: 8
-          Cooldown: 500
+          MaxDistance: 80
+          Cooldown: 1000
         LavaFlow:
           ShiftCooldown: 1500
           ClickLavaCooldown: 1500
@@ -501,7 +504,7 @@ Abilities:
       Radius: 3
       MaxUpwardForce: 0.2
       Interval: 30
-      Cooldown: 500
+      Cooldown: 1000
       Revert: true
       RevertTime: 60000
       Wave:
@@ -510,7 +513,7 @@ Abilities:
         Height: 1
         GrowSpeed: 0.5
         Interval: 30
-        Cooldown: 500
+        Cooldown: 5000
     Plantbending:
       RegrowTime: 180000
     WaterArms:
@@ -627,10 +630,8 @@ Abilities:
         Enabled: true
     Catapult:
       Enabled: true
-      Length: 6
-      Push: 4
-      ShiftModifier: 2
-      Cooldown: 1500
+      Cooldown: 7000
+      StageTimeMult: 2.0
     Collapse:
       Enabled: true
       SelectRange: 20
@@ -973,19 +974,15 @@ Abilities:
       ChiBlockChance: 15
       Cooldown: 4000
 Storage:
-  engine: sqlite
+  engine: MySQL
   MySQL:
     host: localhost
     port: 3306
-    pass: ''
-    db: minecraft
+    pass: removed
+    db: projectkorra
     user: root
 debug: false
 ExtraAbilities:
-  Loony:
-    AirJump:
-      Range: 3
-      Cooldown: 6000
   Sobki:
     Link:
       Range: 12
@@ -993,3 +990,7 @@ ExtraAbilities:
       Duration: 5000
       Cooldown: 6000
       SoundVolume: 0.5
+  Loony:
+    AirJump:
+      Range: 3
+      Cooldown: 6000

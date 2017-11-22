@@ -1,7 +1,8 @@
 FireBreath: Allows the user to breathe a powerful breath of fire
 IceSpike: Pulls a spike of ice up from bellow your enemy
 Flight: Allows the user to fly by holding sneak (SHIFT)
-SwiftKick: Damages the target with a high chance of blocking their chi, if the user is in the air
+SwiftKick: Damages the target with a high chance of blocking their chi, if the user
+  is in the air
 Combustion: Creates a fire-like projectile with their the user's mind
 EarthPillar: Pulls a pillar of earth out in whatever direction you look
 Combo-Crevice: Creates a crevice in the ground that can swallow players!
@@ -10,27 +11,33 @@ WaterSpout: Allows the user to stand on a spout of water
 AirBlast: Releases a blast of air that pushing all mobs and items
 Illumination: Allows the bender to see by holding a flame
 LoonyBlast: Use Loonergy to blast away enemies with extreme power!
-ElementSphere: Creates a sphere of all the elements around the user, allowing them to use all four at once
+ElementSphere: Creates a sphere of all the elements around the user, allowing them
+  to use all four at once
 RapidPunch: Allows the user to attack faster while dealing more damage
 MetalShred: Allows the user to shred a metal wall to gain access through it
-LightningBurst: Allows the user to charge lightning and release it in all directions at once
+LightningBurst: Allows the user to charge lightning and release it in all directions
+  at once
 Combo-FireKick: Create a small arc of fire from your feet!
 Combo-FireSpin: Create a huge ring of fire around you that does damage and huge knockback!
 HeatControl: Allows the user to put out fire and not burn
 IceBlast: Blasts a chunk of ice towards your target
 ToonShield: Shield yourself from any attack with the power of Loonergy!
-SonicBlast: Creates an ear-piecing sonicblast that does high damage to other mobs and players
-EarthLine: Creates a line of risen earth that inflicts damage on all mobs and players that it hits
+SonicBlast: Creates an ear-piecing sonicblast that does high damage to other mobs
+  and players
+EarthLine: Creates a line of risen earth that inflicts damage on all mobs and players
+  that it hits
 Drain: Fill up all bottles in your inventory from the water in plants around you!
 AirSpout: Allows the user to walk on a spout of air
 Combo-AirSlam: Kick your enemy up in the air then kick them away!
-SpiritBeam: Releases a powerful blast as the spirit of the avatar. The user must be in the AvatarState to use this move.
+SpiritBeam: Releases a powerful blast as the spirit of the avatar. The user must be
+  in the AvatarState to use this move.
 IceClaws: Creates ice on your hand that can damage and slow your target
 AcrobatStance: Makes the users faster and stronger but uses more energy in the process
 WaterGimbal: Creates wall of fire that blocks all incoming projectiles and mobs
 Combo-WaterFlow: Create a huge torrent of water that can sweep away your enemies!
 Combo-Twister: Create a twister to suck up and blow away your opponents!
-WarriorStance: Makes the user's attacks more powerful but also makes the user more vulnerable
+WarriorStance: Makes the user's attacks more powerful but also makes the user more
+  vulnerable
 FireBall: Creates a fireball that can be cast towards a user
 WaterBubble: Allows the user to travel underwater with a bubble of air around them
 MetalFragments: Allows the bender to shoot fragments of metal towards a target
@@ -40,11 +47,13 @@ RaiseEarth: Creates walls or collums of earth in front of the user
 MagnetShield: Repels all metal objects hurling towards the user
 SandSpout: Creates a spout of sand for the user to stand on while bliding users bellow
 QuickStrike: Allows the user to attack quickly with a chance to chi block the target
-EarthShard: Allows the user to pickup multiple chunks of earth and hurl them towards their target
+EarthShard: Allows the user to pickup multiple chunks of earth and hurl them towards
+  their target
 Tornado: Creates a tornado of air that will misplace other users
 Tremorsense: Allows the user to see nearby airpockets (caves)
 Sandstorm: Allows the user to whip up a sandstorm!
-Combo-AirStream: Creates a current of air that can be controlled by the player for a while
+Combo-AirStream: Creates a current of air that can be controlled by the player for
+  a while
 SandBlast: Blasts sand towards an enemy, temporarily blinding them
 LavaDisc: Melts a block of earth into a disk of lava that can be thrown
 EarthSmash: Allows the user to grab a huge chunk of earth and throw it
@@ -61,7 +70,8 @@ Combo-WaterGimbal: Control two torrents of water at once!
 AirBreath: Releases a powerful breath of air that knocks back your target
 EarthSurf: Allows the user to ride on earth to scale the terrain fast
 PlantWhip: Creates a vine of leaves that can quickly whip a target
-Torrent: Creates a ring of water around the user which can be used to freeze targets or push them away
+Torrent: Creates a ring of water around the user which can be used to freeze targets
+  or push them away
 WakeFishing: Allows the user to use waterbending to fish
 FireBlast: Blasts a ball of fire towards your enemy
 AirScooter: Allows the user to ride a ball of air to scale across terrain fast
@@ -70,7 +80,8 @@ WaterArms: Allows the user to use water to create arms with lots of different ab
 Smokescreen: Releases smoke and blinds all nearby players
 Combo-IceBullet: Make a dome of ice and that can shoot shards of ice!
 EarthGrab: Allows the user to trap other mobs and players in earth
-Catapult: Allows the user to catapult themselves through the air by launching themselves up from the earth
+Catapult: Allows the user to catapult themselves through the air by launching themselves
+  up from the earth
 FireShield: Allows the user to create a shield of fire in front of them
 Suffocate: Bends the air right out of another player's lungs
 MudSurge: Hurls mud towards a target
@@ -88,7 +99,8 @@ LavaFlow: Turns earth into a pool or lava or creates a ring of lava around the u
 Fissure: Creates a line of lava that can swallow up mobs
 Combo-Maelstrom: Suck everyone and everything up in a deep whirlpool!
 PlantBlast: Allows the user to blast quick, plant projectiles at their target
-Combo-AirSweep: Create a sweeping current of air that can sweep enemies off their feet!
+Combo-AirSweep: Create a sweeping current of air that can sweep enemies off their
+  feet!
 FireShots: Allows the user to cast multiple and short fireballs towards a target
 AirSuction: Pulls all mobs and items towards the the user
 HealingWaters: Allows the user to heal with water
@@ -113,17 +125,21 @@ AirPunch: Allows the user to punch in rapid succession with blasts of air
 SandShift: Allows the user to change sandstone without the need for crafting it
 AirBurst: Creates a powerful gust of air that can blow away your enimies
 Shockwave: Releases a powerful shockwave of earth that sends targets flying
-MetalHook: Allows the bender to use metalbending to hook or graple onto a surface and pull themselves in
+MetalHook: Allows the bender to use metalbending to hook or graple onto a surface
+  and pull themselves in
 FireJet: Allows the user to fly for short distances with fire
 MetalClips: Allows the user to fire slices of metal at a target and capture them
 Lightning: Allows the user to release a stike of lightning
-AvatarState: Users in the Avatar State are much more powerful than normal benders. Their bending power is multiplied heavily and they take far less damage from attacks.
-BloodPuppet: Allows the manipulation of mobs and players to make them damage each other
+AvatarState: Users in the Avatar State are much more powerful than normal benders.
+  Their bending power is multiplied heavily and they take far less damage from attacks.
+BloodPuppet: Allows the manipulation of mobs and players to make them damage each
+  other
 FirePunch: Allows the user to damage and set fire to their enemy with just one punch
 AirBlade: Creates a powerful blade of air that damages mobs and players
 Combo-IceWave: Freeze your WaterWave to damage enemies that you hit!
 AirJump: Propel forward in the direction you are looking
-AirShield: Creates a whirlwind of air around the player, with a small pocket of safe space in the center
+AirShield: Creates a whirlwind of air around the player, with a small pocket of safe
+  space in the center
 EarthDrag: Pull items on the earth around you toward you
 MetalRepair: Bend iron ingots into a fluid that melds with your iron armor or tools
 FireComet: Create a huge fireball to launch as your enemies

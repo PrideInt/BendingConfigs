@@ -5,6 +5,9 @@ Settings:
 Properties:
   MobCollisions:
     Enabled: true
+  AbilityCollisions:
+    Enabled: true
+  FireTickMethod: larger
 Abilities:
   Avatar:
     ElementSphere:
@@ -72,10 +75,20 @@ Abilities:
   Air:
     AirBlade:
       Enabled: true
-      Description: With this ability bound, Left-Click to shoot a strong blade of air at your targets doing some damage!
+      Description: With this ability bound, Left-Click to shoot a strong blade of
+        air at your targets doing some damage!
       Cooldown: 3000
       Range: 30.0
       Damage: 4.0
+      Collisions:
+        FireBlast:
+          Enabled: true
+          RemoveFirst: true
+          RemoveSecond: true
+        FireBlastCharged:
+          Enabled: true
+          RemoveFirst: true
+          RemoveSecond: false
     AirBreath:
       Enabled: true
       Description: 'To use, hold Sneak (Default: Shift) to release a strong breath
@@ -102,19 +115,38 @@ Abilities:
         Knockback: 3.5
     AirGlide:
       Enabled: true
-      Description: While falling, tap Sneak for a slow and steady descent, tap Sneak again to stop gliding.
+      Description: While falling, tap Sneak for a slow and steady descent, tap Sneak
+        again to stop gliding.
       Speed: 0.5
       FallSpeed: 0.1
       Particles: 4
       AllowAirSpout: false
+      Cooldown: 0
+      Duration: 0
+      RequireGround: false
     AirPunch:
       Enabled: true
-      Description: Left-Click in rapid succession to punch high desnity packets of air at enemies to do slight damage to them. A few punches can be thrown before the ability has a cooldown.
+      Description: Left-Click in rapid succession to punch high desnity packets of
+        air at enemies to do slight damage to them. A few punches can be thrown before
+        the ability has a cooldown.
       Cooldown: 5000
       Threshold: 500
       Shots: 4
       Range: 30
       Damage: 1.0
+      Collisions:
+        FireBlast:
+          Enabled: true
+          RemoveFirst: true
+          RemoveSecond: false
+        FireBlastCharged:
+          Enabled: true
+          RemoveFirst: true
+          RemoveSecond: false
+        AirBlade:
+          Enabled: true
+          RemoveFirst: true
+          RemoveSecond: false
     Meditate:
       Enabled: true
       Description: 'Hold Sneak (Default: Shift) to start meditating. After you have
@@ -144,6 +176,7 @@ Abilities:
         NauseaDuration: 5000
       Cooldown: 6000
       Range: 20
+      ChargeSwapping: true
     AirCombo:
       AirSlam:
         Enabled: true
@@ -153,7 +186,8 @@ Abilities:
         Range: 8
       SwiftStream:
         Enabled: true
-        Description: Create a stream of air as you fly which causes nearby entities to be thrown in your direction.
+        Description: Create a stream of air as you fly which causes nearby entities
+          to be thrown in your direction.
         DragFactor: 1.5
         Duration: 2000
         Cooldown: 6000
@@ -192,7 +226,11 @@ Abilities:
       Range: 10
     EarthShard:
       Enabled: true
-      Description: EarthShard is a variation of EarthBlast which the earthbender may use to hit a target. This ability deals a fair amount of damage and is easy to rapid-fire. To use, simply shift at an earthbendable block, and it will ascend to your eye height. Then, click towards your target and the block will launch itself towards it.
+      Description: EarthShard is a variation of EarthBlast which the earthbender may
+        use to hit a target. This ability deals a fair amount of damage and is easy
+        to rapid-fire. To use, simply shift at an earthbendable block, and it will
+        ascend to your eye height. Then, click towards your target and the block will
+        launch itself towards it.
       Cooldown: 1000
       Damage:
         Normal: 1.0
@@ -202,17 +240,28 @@ Abilities:
       MaxShards: 3
     EarthSurf:
       Enabled: true
-      Description: This ability allows an earth bender to ride up on a wave of earth, allowing them to travel a little faster than normal. To use, simply be in the air just above the ground, and Left Click! Additionally, if an entity just so happens to get caught in the wave, they will be moved with the wave.
+      Description: This ability allows an earth bender to ride up on a wave of earth,
+        allowing them to travel a little faster than normal. To use, simply be in
+        the air just above the ground, and Left Click! Additionally, if an entity
+        just so happens to get caught in the wave, they will be moved with the wave.
       Cooldown:
         Cooldown: 3000
+        MinimumCooldown: 2000
+        Scaled: true
         Enabled: false
       Duration:
         Duration: 7000
         Enabled: false
+      RelaxedCollisions: true
       Speed: 0.55
+      HeightTolerance: 3
+      SpringStiffness: 0.35
     Fissure:
       Enabled: true
-      Description: Fissure is an advanced Lavabending ability enabling a lavabender to tear up the ground, swallowing up any enemies. To use, simply swing at an enemy and a line of lava will crack open. The crevice will automatically expand to burn enemies before closing again
+      Description: Fissure is an advanced Lavabending ability enabling a lavabender
+        to tear up the ground, swallowing up any enemies. To use, simply swing at
+        an enemy and a line of lava will crack open. The crevice will automatically
+        expand to burn enemies before closing again
       Cooldown: 20000
       Duration: 5000
       MaxWidth: 3
@@ -241,7 +290,9 @@ Abilities:
       - LOG_2
     LavaFlux:
       Enabled: true
-      Description: This offensive ability enables a Lavabender to create a wave of lava, swiftly progressing forward and hurting/burning anything in its way. To use, simply swing your arm towards a target and the ability will activate.
+      Description: This offensive ability enables a Lavabender to create a wave of
+        lava, swiftly progressing forward and hurting/burning anything in its way.
+        To use, simply swing your arm towards a target and the ability will activate.
       Range: 10
       Cooldown: 8000
       Duration: 2500
@@ -261,9 +312,11 @@ Abilities:
       Damage: 1.0
       SourceGrabRange: 4
       SourceRegenDelay: 10000
+      FireTicks: 80
     MagnetShield:
       Enabled: true
-      Description: Repel any metal projectiles using a strong magnetic shield. To activate, simply hold sneak with this ability bound.
+      Description: Repel any metal projectiles using a strong magnetic shield. To
+        activate, simply hold sneak with this ability bound.
     MetalFragments:
       Enabled: true
       Description: 'MetalFragments allows you to select a source and shoot multiple
@@ -305,7 +358,10 @@ Abilities:
       Damage: 6.0
     MudSurge:
       Enabled: true
-      Description: This ability lets an earthbender send a surge of mud in any direction, knocking back enemies and dealing moderate damage. This ability has a chance of blinding the target. To use, select a source of earth and click in any direction.
+      Description: This ability lets an earthbender send a surge of mud in any direction,
+        knocking back enemies and dealing moderate damage. This ability has a chance
+        of blinding the target. To use, select a source of earth and click in any
+        direction.
       Cooldown: 6000
       Damage: 0.5
       Waves: 5
@@ -313,6 +369,8 @@ Abilities:
       BlindChance: 10
       WetSourceOnly: false
       WaterSearchRadius: 5
+      BlindTicks: 60
+      MultipleHits: true
     SandBlast:
       Enabled: true
       Description: 'This ability lets an earthbender blast a bunch of sand at an enemy
@@ -327,7 +385,8 @@ Abilities:
     EarthCombo:
       Crevice:
         Enabled: true
-        Description: Create a Crevice in the ground! Once opened, anyone can Tap Sneak with Shockwave to close the Crevice!
+        Description: Create a Crevice in the ground! Once opened, anyone can Tap Sneak
+          with Shockwave to close the Crevice!
         Range: 50
         RevertDelay: 7500
         Depth: 5
@@ -338,14 +397,24 @@ Abilities:
         Description: Fire balls of magma at your enemy!
         MaxShots: 3
         ImpactDamage: 5.0
-        TravelRange: 10
         SearchRange: 4
         Cooldown: 8000
         ShotCooldown: 1500
+        RequireLavaFlow: false
+        PlayerCollisions: true
+        EntitySelection: true
+        SelectRange: 30.0
+        ExplosionRadius: 2.0
+        FireSpeed: 1.5
+        MaxDuration: 15000
+        MaxDistanceFromSources: 15
+        TravelRange: 10
   Fire:
     Combustion:
       Enabled: true
-      Description: Hold Shift to focus large amounts of energy into your body, Release Shift to fire Combustion. Move your mouse to direct where the beam travels. Left-Click to detonate the beam manually
+      Description: Hold Shift to focus large amounts of energy into your body, Release
+        Shift to fire Combustion. Move your mouse to direct where the beam travels.
+        Left-Click to detonate the beam manually
       Damage: 6.0
       FireTick: 100
       MisfireModifier: -1
@@ -359,7 +428,8 @@ Abilities:
       InstantExplodeIfHit: true
     Discharge:
       Enabled: true
-      Description: Left-Click to shoot bolts of electricity out of your fingertips zapping what ever it hits!
+      Description: Left-Click to shoot bolts of electricity out of your fingertips
+        zapping what ever it hits!
       Damage: 3.0
       Cooldown: 5000
     FireBall:
@@ -370,6 +440,17 @@ Abilities:
       Damage: 3.0
       FireDuration: 2000
       Controllable: false
+      FireTrail: true
+      Collisions:
+        FireShield:
+          Enabled: true
+          RemoveFirst: true
+          RemoveSecond: false
+        AirShield:
+          Enabled: true
+          RemoveFirst: false
+          RemoveSecond: false
+          Reflect: true
     FireBreath:
       Enabled: true
       Description: 'To use, hold Sneak (Default: Shift) to start breathing fire! Some
@@ -419,7 +500,8 @@ Abilities:
       AvatarStateBypassComet: true
     FirePunch:
       Enabled: true
-      Description: This basic ability allows a Firebender to channel their energies into a single punch, igniting and damaging the victim.
+      Description: This basic ability allows a Firebender to channel their energies
+        into a single punch, igniting and damaging the victim.
       Cooldown: 4000
       FireTicks: 2000
       Damage: 2.0
@@ -433,12 +515,23 @@ Abilities:
       FireBalls: 4
       FireDuration: 3000
       Damage: 2.0
+      Collisions:
+        FireShield:
+          Enabled: true
+          RemoveFirst: true
+          RemoveSecond: false
+        AirShield:
+          Enabled: true
+          RemoveFirst: false
+          RemoveSecond: false
+          Reflect: true
     FireSki:
       Enabled: true
       Cooldown: 6000
       Duration: 6000
       Speed: 0.7
       IgniteEntities: true
+      FireTicks: 60
     LightningBurst:
       Enabled: true
       Description: 'To use the most explosive lightning move available to a firebender,
@@ -452,7 +545,13 @@ Abilities:
   Water:
     Bloodbending:
       Enabled: true
-      Description: This ability allows a skilled waterbender to bend the water within an enemy's blood, granting them full control over the enemy's limbs. This ability is extremely dangerous and is to be used carefully. To use, sneak while looking at an entity and its body will follow your movement. If you click, you will launch the entity towards whatever you were looking at when you clicked. The entity may collide with others, injuring them and the other one further.
+      Description: This ability allows a skilled waterbender to bend the water within
+        an enemy's blood, granting them full control over the enemy's limbs. This
+        ability is extremely dangerous and is to be used carefully. To use, sneak
+        while looking at an entity and its body will follow your movement. If you
+        click, you will launch the entity towards whatever you were looking at when
+        you clicked. The entity may collide with others, injuring them and the other
+        one further.
       NightOnly: true
       FullMoonOnly: true
       UndeadMobs: true
@@ -463,7 +562,12 @@ Abilities:
       Cooldown: 4000
     BloodPuppet:
       Enabled: true
-      Description: This very high-level bloodbending ability lets a master control entities' limbs, forcing them to attack the master's target. To use this ability, you must be a bloodbender. Next, sneak while targeting a mob or player and you will start controlling them. To make the entity hit another, click. To release your target, stop sneaking. This ability has NO cooldown, but may only be usable during the night depending on the server configuration.
+      Description: This very high-level bloodbending ability lets a master control
+        entities' limbs, forcing them to attack the master's target. To use this ability,
+        you must be a bloodbender. Next, sneak while targeting a mob or player and
+        you will start controlling them. To make the entity hit another, click. To
+        release your target, stop sneaking. This ability has NO cooldown, but may
+        only be usable during the night depending on the server configuration.
       NightOnly: true
       FullMoonOnly: true
       UndeadMobs: true
@@ -520,7 +624,14 @@ Abilities:
       RestrictBiomes: true
     HealingWaters:
       Enabled: true
-      Description: To use this ability, the bender has to be partially submerged in water, OR be holding either a bottle of water or a water bucket. This move will heal the player automatically if they have it equipped and are standing in water. If the player sneaks while in water and is targeting another entity, the bender will heal the targeted entity. The alternate healing method requires the bender to be holding a bottle of water or a water bucket. To start healing simply sneak, however if the bender is targeting a mob while sneaking, the bender will heal the targeted mob.
+      Description: To use this ability, the bender has to be partially submerged in
+        water, OR be holding either a bottle of water or a water bucket. This move
+        will heal the player automatically if they have it equipped and are standing
+        in water. If the player sneaks while in water and is targeting another entity,
+        the bender will heal the targeted entity. The alternate healing method requires
+        the bender to be holding a bottle of water or a water bucket. To start healing
+        simply sneak, however if the bender is targeting a mob while sneaking, the
+        bender will heal the targeted mob.
       Power: 1
       Range: 5
       DrainChance: 5
@@ -539,7 +650,11 @@ Abilities:
       Throwable: true
     IceWall:
       Enabled: true
-      Description: IceWall allows an icebender to create a wall of ice, similar to raiseearth. To use, simply sneak while targeting either water, ice, or snow. To break the wall, you must sneak again while targeting it. Be aware that other icebenders can break your own shields, and if you are too close you can get hurt by the shards.
+      Description: IceWall allows an icebender to create a wall of ice, similar to
+        raiseearth. To use, simply sneak while targeting either water, ice, or snow.
+        To break the wall, you must sneak again while targeting it. Be aware that
+        other icebenders can break your own shields, and if you are too close you
+        can get hurt by the shards.
       Cooldown: 4000
       Width: 6
       MaxHeight: 5
@@ -571,10 +686,13 @@ Abilities:
       Cooldown: 10000
       Duration: 20000
       Range: 5
+    WaterBlast:
+      Enabled: false
     WaterCombo:
       Maelstrom:
         Enabled: true
-        Description: Create a swirling mass of water that drags any entity that enters it to the bottom of the whirlpool.
+        Description: Create a swirling mass of water that drags any entity that enters
+          it to the bottom of the whirlpool.
         Cooldown: 25000
         Duration: 15000
         MaxDepth: 5
@@ -593,6 +711,8 @@ Abilities:
         MaxRange: 40
         MinRange: 8
         Trail: 80
+        BottleSource: false
+        PlantSource: false
         Size:
           Normal: 1
           AvatarState: 3
@@ -610,7 +730,9 @@ Abilities:
         PlayerRideOwnFlow: true
       WaterGimbal:
         Enabled: true
-        Description: Skilled Waterbenders are able to create two spinning rings of water around their bodies, which can be used as a defensive ability or for an offensive attack.
+        Description: Skilled Waterbenders are able to create two spinning rings of
+          water around their bodies, which can be used as a defensive ability or for
+          an offensive attack.
         Cooldown: 7000
         Damage: 3.0
         RingSize: 3.5
@@ -619,6 +741,8 @@ Abilities:
         Speed: 2
         AnimationSpeed: 3
         PlantSource: true
+        RequireAdjacentPlants: true
+        BottleSource: false
     Ice:
       Passive:
         Skate:
@@ -627,12 +751,16 @@ Abilities:
   Chi:
     Backstab:
       Enabled: true
-      Description: Strike your foe in the back with a hard jab, temporariliy blocking their Chi, and inflicting a lot of damage! This ability has a long cooldown. You must hit the target in the back or this ability won't work!
+      Description: Strike your foe in the back with a hard jab, temporariliy blocking
+        their Chi, and inflicting a lot of damage! This ability has a long cooldown.
+        You must hit the target in the back or this ability won't work!
       Cooldown: 8500
       Damage: 6.0
+      MaxActivationAngle: 90
     DaggerThrow:
       Enabled: true
-      Description: With this ability bound, Left-Click in rapid succession to shoot arrows out of your inventory at your target!
+      Description: With this ability bound, Left-Click in rapid succession to shoot
+        arrows out of your inventory at your target!
       Cooldown: 3000
       MaxDaggers:
         Enabled: true

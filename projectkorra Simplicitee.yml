@@ -1,8 +1,4 @@
 Abilities:
-  MetalRepair:
-    Cooldown: 1000
-    RepairAmount: 25
-    RepairInterval: 1250
   FireDisc:
     Damage: 2
     Range: 25
@@ -17,3 +13,16 @@ Abilities:
     Cooldown: 1000
     PullSpeed: 0.675
     Radius: 18
+  EarthRing:
+    Cooldown: 6000
+    HitPoints: 5
+    GrabRadius: 4
+    ShotDamage: 2
+    SpinDamage: 1
+    ShootSpeed: 1.7
+    SpinSpeed: 8
+    MaxRange: 25
+  MetalRepair:
+    Cooldown: 1000
+    RepairAmount: 25
+    RepairInterval: 1250

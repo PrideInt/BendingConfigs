@@ -8,3 +8,22 @@ Settings:
     'On': '&7You have toggled the bending board on.'
   Display:
     DisabledWorlds: true
+  OtherCooldowns:
+    WallRun:
+      Color: GOLD
+      Enabled: true
+    TorrentWave:
+      Color: AQUA
+      Enabled: true
+    SurgeWave:
+      Color: AQUA
+      Enabled: true
+    SurgeWall:
+      Color: AQUA
+      Enabled: true
+    RaiseEarthPillar:
+      Color: GREEN
+      Enabled: true
+    RaiseEarthWall:
+      Color: GREEN
+      Enabled: true

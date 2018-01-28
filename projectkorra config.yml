@@ -1259,7 +1259,7 @@ ExtraAbilities:
       CrushChargeTime: 2000
       StageAddDuration: 0
     AirSlash:
-      Cooldown: 3000
+      Cooldown: 8000
       Range: 80
       Damage: 4
       Controllable: true
@@ -1345,12 +1345,11 @@ ExtraAbilities:
       Cooldown: 2000
       Range: 20
       Damage: 4
-      Speed: 0.06
     Sprout:
-      Cooldown: 2000
+      Cooldown: 3000
       Range: 20
-      Damage: 2
-      Speed: 0.04
+      Damage: 4
+      Speed: 1.3
   Finn_Bueno_:
     SeismicSense:
       Cooldown: 5000

@@ -11,12 +11,13 @@ Properties:
   FireTickMethod: larger
   LogDebug: false
   ChiRestrictor:
-    Enabled: false
+    Enabled: true
     ResetCooldown: true
     MeleeDistance: 7
-    Whitelist: []
+    Whitelist:
+    - DaggerThrow
   CooldownEnforcer:
-    Enabled: false
+    Enabled: true
     OnReload: true
 Abilities:
   Avatar:

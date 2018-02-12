@@ -7,7 +7,17 @@ Properties:
     Enabled: true
   AbilityCollisions:
     Enabled: true
+  PerWorldConfig: true
   FireTickMethod: larger
+  LogDebug: false
+  ChiRestrictor:
+    Enabled: false
+    ResetCooldown: true
+    MeleeDistance: 7
+    Whitelist: []
+  CooldownEnforcer:
+    Enabled: false
+    OnReload: true
 Abilities:
   Avatar:
     ElementSphere:
@@ -80,6 +90,8 @@ Abilities:
       Cooldown: 3000
       Range: 30.0
       Damage: 4.0
+      EntityCollisionRadius: 1.0
+      AbilityCollisionRadius: 1.0
       Collisions:
         FireBlast:
           Enabled: true
@@ -134,6 +146,8 @@ Abilities:
       Shots: 4
       Range: 30
       Damage: 1.0
+      EntityCollisionRadius: 1.0
+      AbilityCollisionRadius: 1.0
       Collisions:
         FireBlast:
           Enabled: true
@@ -175,6 +189,8 @@ Abilities:
         BlindnessDuration: 5000
         NauseaDuration: 5000
       Cooldown: 6000
+      EntityCollisionRadius: 1.3
+      AbilityCollisionRadius: 1.3
       Range: 20
       ChargeSwapping: true
     AirCombo:
@@ -195,7 +211,9 @@ Abilities:
     EarthArmor:
       Enabled: false
       Description: If the block is metal, then you will get metal armor!
-      MetalStrength: 10
+      Resistance:
+        Strength: 2
+        Duration: 4000
       UseIronArmor: true
     EarthKick:
       Enabled: true
@@ -205,6 +223,41 @@ Abilities:
       Cooldown: 2000
       EarthBlocks: 10
       Damage: 2.0
+      EntityCollisionRadius: 1.5
+      AbilityCollisionRadius: 1.5
+      Collisions:
+        FireBlast:
+          Enabled: true
+          RemoveFirst: false
+          RemoveSecond: true
+        EarthBlast:
+          Enabled: true
+          RemoveFirst: false
+          RemoveSecond: true
+        WaterManipulation:
+          Enabled: true
+          RemoveFirst: false
+          RemoveSecond: true
+        AirSwipe:
+          Enabled: true
+          RemoveFirst: false
+          RemoveSecond: true
+        Combustion:
+          Enabled: true
+          RemoveFirst: false
+          RemoveSecond: true
+        WaterSpout:
+          Enabled: true
+          RemoveFirst: false
+          RemoveSecond: true
+        AirSpout:
+          Enabled: true
+          RemoveFirst: false
+          RemoveSecond: true
+        AirWheel:
+          Enabled: true
+          RemoveFirst: false
+          RemoveSecond: true
     EarthLine:
       Enabled: true
       Description: 'To use, place your cursor over an earth-bendable block on the
@@ -238,6 +291,8 @@ Abilities:
       PrepareRange: 5
       AbilityRange: 30
       MaxShards: 3
+      AbilityCollisionRadius: 2.0
+      EntityCollisionRadius: 1.4
     EarthSurf:
       Enabled: true
       Description: This ability allows an earth bender to ride up on a wave of earth,
@@ -253,6 +308,7 @@ Abilities:
         Duration: 7000
         Enabled: false
       RelaxedCollisions: true
+      RemoveOnAnyDamage: false
       Speed: 0.55
       HeightTolerance: 3
       SpringStiffness: 0.35
@@ -276,14 +332,27 @@ Abilities:
       Cooldown: 7000
       Duration: 1000
       Damage: 4.0
+      Particles: 3
+      ContinueAfterEntityHit: false
+      RecallLimit: 3
+      Destroy:
+        RegenTime: 5000
+        BlockDamage: true
+        AdditionalMeltableBlocks:
+        - COBBLESTONE
+        - LOG
+        - LOG_2
+        LavaTrail: true
+        TrailFlow: false
+      Source:
+        RegenTime: 10000
+        LavaOnly: false
+        Range: 4.0
       Regen: 5000
       SourceRegen: 10000
-      Particles: 3
       LavaSourceOnly: false
-      ContinueAfterEntityHit: false
       BlockDamage: true
       LavaTrail: true
-      RecallLimit: 3
       AdditionalMeltableBlocks:
       - COBBLESTONE
       - LOG
@@ -370,7 +439,15 @@ Abilities:
       WetSourceOnly: false
       WaterSearchRadius: 5
       BlindTicks: 60
+      CollisionRadius: 2.0
       MultipleHits: true
+      AllowFallDamage: false
+      RemovalPolicy:
+        SwappedSlots:
+          Enabled: true
+        OutOfRange:
+          Enabled: true
+          Range: 25.0
     SandBlast:
       Enabled: true
       Description: 'This ability lets an earthbender blast a bunch of sand at an enemy
@@ -423,15 +500,26 @@ Abilities:
       Warmup: 1500
       Cooldown: 5000
       RegenTime: 10000
+      EntityCollisionRadius: 1.3
+      AbilityCollisionRadius: 1.3
       DamageBlocks: true
       RegenBlocks: true
+      WaitForRegen: true
       InstantExplodeIfHit: true
+      ExplodeOnDeath: true
+      RemovalPolicy:
+        SwappedSlots:
+          Enabled: false
     Discharge:
       Enabled: true
       Description: Left-Click to shoot bolts of electricity out of your fingertips
         zapping what ever it hits!
       Damage: 3.0
       Cooldown: 5000
+      Duration: 1000
+      SlotSwapping: false
+      EntityCollisionRadius: 1.0
+      AbilityCollisionRadius: 1.0
     FireBall:
       Enabled: true
       Description: To use, simply Left-Click to shoot a fireball at your target!
@@ -441,6 +529,7 @@ Abilities:
       FireDuration: 2000
       Controllable: false
       FireTrail: true
+      CollisionRadius: 1.1
       Collisions:
         FireShield:
           Enabled: true
@@ -515,6 +604,7 @@ Abilities:
       FireBalls: 4
       FireDuration: 3000
       Damage: 2.0
+      CollisionRadius: 0.9
       Collisions:
         FireShield:
           Enabled: true
@@ -532,6 +622,8 @@ Abilities:
       Speed: 0.7
       IgniteEntities: true
       FireTicks: 60
+      RequiredHeight: 0.7
+      PunchActivated: false
     LightningBurst:
       Enabled: true
       Description: 'To use the most explosive lightning move available to a firebender,
@@ -686,8 +778,6 @@ Abilities:
       Cooldown: 10000
       Duration: 20000
       Range: 5
-    WaterBlast:
-      Enabled: false
     WaterCombo:
       Maelstrom:
         Enabled: true
@@ -713,6 +803,7 @@ Abilities:
         Trail: 80
         BottleSource: false
         PlantSource: false
+        RemoveOnAnyDamage: false
         Size:
           Normal: 1
           AvatarState: 3
@@ -743,11 +834,20 @@ Abilities:
         PlantSource: true
         RequireAdjacentPlants: true
         BottleSource: false
+        AbilityCollisionRadius: 1.6
+        EntityCollisionRadius: 1.6
+        Collisions:
+          FireShield:
+            Enabled: false
+            RemoveFirst: true
+            RemoveSecond: false
     Ice:
       Passive:
         Skate:
           Enabled: true
           SpeedFactor: 4
+    WaterBlast:
+      Enabled: false
   Chi:
     Backstab:
       Enabled: true
@@ -767,6 +867,16 @@ Abilities:
         Amount: 6
       Damage: 1.0
       ParticleTrail: true
+      AbilityCollisionRadius: 0.5
+      Interactions:
+        WaterSpout:
+          Enabled: true
+          Cooldown: 1000
+          HitsRequired: 1
+        AirSpout:
+          Enabled: true
+          Cooldown: 1000
+          HitsRequired: 1
   Passives:
     WallRun:
       Enabled: true

@@ -35,7 +35,7 @@ Chat:
     Nonbender: '[Nonbender]'
 Extras:
   Water:
-    NightMessage: Your waterbending has become empowered due to the full moon rising.
+    NightMessage: Your waterbending has become empowered due to the moon rising.
     DayMessage: You feel the empowering of your waterbending subside as the moon sets.
   Fire:
     NightMessage: You feel the empowering of your firebending subside as the sun sets.
@@ -122,6 +122,13 @@ Commands:
         the {name} preset.
     External:
       NoPresetName: No external preset found with that name.
+  Stats:
+    InvalidLookup: Invalid lookup argument.
+    InvalidSearchType: Invalid search type.
+    InvalidStatistic: Invalid statistic.
+    InvalidPlayer: Player '%player%' not found.
+    Description: This command manages statistics. View your own, another player's
+      statistics along with the server leaderboard.
   PermaRemove:
     Description: This command will permanently remove the Bending of the targeted
       <Player>. Once removed, a player may only receive Bending again if this command
@@ -221,6 +228,7 @@ Commands:
       they have permission to rechoose their element.
     InvalidElement: That is not a valid element.
     PlayerNotFound: Could not find player.
+    OnCooldown: You must wait %cooldown% before changing your element.
     SuccessfullyChosenCFW: You are now a {element}.
     SuccessfullyChosenAE: You are now an {element}.
     Other:
@@ -348,13 +356,18 @@ Abilities:
         (Charged) Hold sneak until particles appear, then release sneak to send a more powerful air swipe out that damages entity's that it comes into contact with.
       DeathMessage: '{victim} was struck by {attacker}''s {ability}'
     Flight:
-      Description: Flight is one of the most advanced airbending abilities there is.
-        It's used to escape from players or mobs or to confuse your enemy by flying
-        around them, making you extremely hard to hit.
+      Description: 'Fly through the air as Zaheer and Guru Laghima did! This multiability
+        allows for three modes of flight: soaring, gliding, and levitating. You can
+        also right-click another player while flying to have them become your passenger!
+        When flying at fast speeds, flying past nearby enemies will damage them for
+        half your speed and knock them in the direction you''re heading!'
       Instructions: |2-
 
-        (Fly) Jump in the air and hold sneak to fly in the direction that you're looking.
-        (Hover) While flying with this ability, left click to hover in the air. Left click again to disable hovering
+        - (To start flying, jump and left-click)
+        - (Soar) Left-Click to change flying speeds.
+        - (Glide) Normal minecraft gliding. Slowing down or speeding up in this mode will affect the Soar speed.
+        - (Levitate) Basically minecraft flying, allowing players to fly around for building purposes or a more controlled 'hovering'.
+        - (Ending) Being in this mode sets any gliding and flight back the the state they were before using the ability.
     Suffocate:
       Description: This ability is one of the most dangerous abilities an Airbender
         possesses. Although it is difficult to perform, it's extremely deadly once
@@ -522,6 +535,9 @@ Abilities:
         Description: FastSwim is a passive ability for waterbenders allowing them
           to travel quickly through the water. Simple hold shift while underwater
           to propel yourself forward.
+      HydroSink:
+        Description: Hydrosink is a passive ability for waterbenders enabling them
+          to softly land on any waterbendable surface, cancelling all damage.
       Hydrosink:
         Description: Hydrosink is a passive ability for waterbenders enabling them
           to softly land on any waterbendable surface, cancelling all damage.
@@ -566,13 +582,14 @@ Abilities:
     EarthGrab:
       Description: EarthGrab is one of the best defence abilities in an earthbender's
         aresenal. It allows you to trap someone who is running away so that you can
-        catch up to someone, or quickly create a dome to protect yourself from incomming
-        attacks. Although this ability is basic, it requires fast reactions to reach
-        its full potential.
+        catch up to someone. It is also of great utility use to an earthbender. It
+        can be used to drag items, arrows, and crops that are on earthbendable blocks
+        towards you, saving you the time of running to get them.
       Instructions: |2-
 
-        (Grab) To grab an entity, hold sneak and left click in the direction of the target. Earth will expand out and create an earth dome around the target, trapping them.
-        (Dome) To encase yourself in an earth dome, simply left click at an earthbendable block under you.
+        (Grab) To grab an entity, sneak in the direction of the target. The earth will reach up and root them in their spot. The ability can be manually be disabled by sneaking again on the EarthGrab slot.
+        (Drag) To drag items towards you, sneak
+        (Escaping) To escape, the trap must be destroyed or the user damaged. The trap can be destroyed by damage or the trapped entity right-clicking it a certain number of times. Additionally, forcefully moving the entity with another earth ability destroys the trap.
     EarthTunnel:
       Description: Earth Tunnel is a completely utility ability for earthbenders.
         It allows you to dig a hole that lowers players down while you continue the
@@ -795,6 +812,8 @@ Abilities:
         ability for Chiblockers. When used, a smoke bomb is fired which will blind
         anyone within a small radius of the explosion, allowing you to either get
         away, or move in for the kill.
+      Instructions: Left click and a smoke bomb will be fired in the direction you're
+        looking.
     WarriorStance:
       Description: WariorStance is an advanced chiblocker technique that gives the
         chiblocker increased damage but makes them a tad more vulnerable. This ability

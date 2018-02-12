@@ -9,6 +9,7 @@ Properties:
   GlobalCooldown: 500
   TogglePassivesWithAllBending: true
   SeaLevel: 62
+  ChooseCooldown: 0
   HorizontalCollisionPhysics:
     Enabled: true
     DamageOnBarrierBlock: false
@@ -36,6 +37,7 @@ Properties:
       Volume: 1
       Pitch: 2
   Water:
+    DynamicSourcing: true
     CanBendWithWeapons: false
     IceBlocks:
     - ICE
@@ -81,6 +83,7 @@ Properties:
     PlantSound:
       Sound: BLOCK_GRASS_STEP
   Earth:
+    DynamicSourcing: true
     RevertEarthbending: true
     SafeRevert: true
     RevertCheckTime: 60000
@@ -261,8 +264,8 @@ Abilities:
           Cooldown: 500
           Damage: 5
         EarthGrab:
-          Cooldown: 500
-          Height: 10
+          Cooldown: 0
+          Height: 6
           Radius: 6
         Shockwave:
           Range: 20
@@ -419,6 +422,7 @@ Abilities:
     AirShield:
       Enabled: true
       Cooldown: 0
+      Duration: 0
       Radius: 7
       Streams: 5
       Speed: 10
@@ -426,6 +430,7 @@ Abilities:
     AirSpout:
       Enabled: true
       Cooldown: 0
+      Duration: 0
       Height: 16
       Interval: 100
     AirSuction:
@@ -453,11 +458,8 @@ Abilities:
       StepSize: 4
     Flight:
       Enabled: true
-      HoverEnabled: true
-      Cooldown: 5000
-      Speed: 1
-      MaxHits: 4
-      MaxDuration: 0
+      Cooldown: 20000
+      BaseSpeed: 1.2
     Suffocate:
       Enabled: true
       ChargeTime: 500
@@ -481,6 +483,7 @@ Abilities:
     Tornado:
       Enabled: true
       Cooldown: 0
+      Duration: 0
       Radius: 10
       Height: 20
       Range: 25
@@ -839,10 +842,13 @@ Abilities:
       CollisionRadius: 1.5
     EarthGrab:
       Enabled: true
-      SelectRange: 20
-      Height: 6
-      Cooldown: 10000
-      Radius: 4
+      SelectRange: 7
+      DragSpeed: 0.8
+      Cooldown: 5000
+      Range: 14
+      TrapHitInterval: 700
+      TrapHP: 4
+      DamageThreshold: 4
     EarthTunnel:
       Enabled: true
       Cooldown: 0
@@ -943,6 +949,7 @@ Abilities:
       Radius: 5
       LightThreshold: 7
       Cooldown: 1000
+      StickyRange: 3
     EarthPillars:
       Enabled: true
       Cooldown: 7000
@@ -1019,6 +1026,7 @@ Abilities:
       Duration: 2000
       Cooldown: 7000
     FireManipulation:
+      Enabled: true
       Stream:
         Cooldown: 12000
         Range: 50
@@ -1345,6 +1353,7 @@ ExtraAbilities:
       Cooldown: 2000
       Range: 20
       Damage: 4
+      Swim: true
     Sprout:
       Cooldown: 3000
       Range: 20
